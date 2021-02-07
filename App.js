@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import CategoryButton from "./Componenets/CategoryButton";
-import Notifcation from "./Componenets/Notification";
+import ItemCard from "./Componenets/ItemCard";
 import color from "./Config/color";
 
 export default function App() {
@@ -22,14 +22,11 @@ export default function App() {
           top: 50,
         }}
       >
-        <CategoryButton
-          icon="cart-minus"
-          iconcolor={"black"}
-          size={35}
-          bgcolor={color.white}
-          diamondcolor={color.grey}
-          float={false}
-          notify={true}
+        <ItemCard
+          name="Landscape"
+          type="Matter Mode"
+          price="345"
+          currency="USD"
         />
       </View>
     </View>

@@ -6,7 +6,6 @@ import {
   Text,
   View,
   ScrollView,
-  Dimensions,
   Platform,
 } from "react-native";
 import CategoryButton from "./Componenets/CategoryButton";
@@ -16,7 +15,7 @@ import color from "./Config/color";
 
 export default function App() {
   //const [bgcolor, setbgcolor] = useState(color.grey);
-  // const [diamondcolor, setdiamondcolor] = useState(color.white_lightblue);
+  //const [diamondcolor, setdiamondcolor] = useState(color.white_lightblue);
   //const [iconcolor, seticoncolor] = useState(color.blue);
   const itemcard = [
     {

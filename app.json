@@ -4,7 +4,7 @@
     "slug": "ShopApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/shopapp-icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Created for Learning React Native",
+    "githubUrl": "https://github.com/bilal1031/ShopApp"
   }
 }

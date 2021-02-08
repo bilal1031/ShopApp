@@ -9,13 +9,10 @@ import {
 import color from "../Config/color";
 import ArrowButton from "./ArrowButton";
 
-const ItemCard = ({ name, type, price, currency, onPress }) => {
+const ItemCard = ({ name, type, price, currency, image, onPress }) => {
   return (
     <View style={styles.main_div}>
-      <Image
-        source={{ uri: "https://picsum.photos/200/300" }}
-        style={styles.image}
-      />
+      <Image source={image} style={styles.image} />
       <TouchableNativeFeedback
         onPress={onPress}
         background={TouchableNativeFeedback.Ripple(

@@ -10,18 +10,18 @@ const CategoryButton = ({
   bgcolor,
   diamondcolor,
   float,
+  style,
+  onPress,
 }) => {
   const [tricolor, setcolor] = useState(bgcolor);
-  const [notifcation, shownotification] = useState();
-  const [rightmargin, setrmargin] = useState(39);
-
+  const [notifcation, shownotification] = useState(true);
+  const [rightmargin, setrmargin] = useState(35);
   return (
     <Pressable
-      onPress={() => {
-        console.log("hit");
-      }}
+      onPress={onPress}
       onPressIn={() => setcolor(color.white)}
       onPressOut={() => setcolor(bgcolor)}
+      style={style}
     >
       <View
         style={[
@@ -33,8 +33,13 @@ const CategoryButton = ({
           <View
             style={[styles.triangle, { borderBottomColor: tricolor }]}
           ></View>
+          {notifcation}
           <MaterialCommunityIcons
-            style={{ right: rightmargin, bottom: 5, elevation: float ? 25 : 0 }}
+            style={{
+              right: rightmargin,
+              bottom: 5,
+              elevation: float ? 25 : 0,
+            }}
             name={icon}
             size={size}
             color={iconcolor}

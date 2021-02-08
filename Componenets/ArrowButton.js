@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { View, StyleSheet, Image, Text, Pressable } from "react-native";
 import color from "../Config/color";
 import Icon from "react-native-vector-icons/AntDesign";
-const ArrowButton = () => {
+const ArrowButton = ({ style }) => {
   const [buttoncolor, setcolor] = useState(color.otherblue);
   const [iconcolor, seticoncolor] = useState(color.white);
   return (
     <Pressable
-      style={[styles.maindiv, { backgroundColor: buttoncolor }]}
+      style={[styles.maindiv, { backgroundColor: buttoncolor }, [style]]}
       onPressIn={() => {
         setcolor(color.white);
         seticoncolor(color.blue);

@@ -56,7 +56,7 @@ export default function MainScreen() {
       icon: "cup",
     },
   ];
-  const [active_Category, setactive_category] = useState("cupboard");
+  const [active_Category, setactive_category] = useState("lamp");
   return (
     <View style={styles.maincontainer}>
       <ScrollView style={{ height: "100%", backgroundColor: color.white }}>

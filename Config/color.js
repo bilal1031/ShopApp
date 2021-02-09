@@ -6,4 +6,7 @@ export default {
   otherblue: "#3875fe",
   white_lightblue: "#d0deff",
   lightgrey: "#f0f2f7",
+  superlightgrey: "#f0f2f7",
+  mildgrey: "#bfcbd9",
+  icongrey: "#969baa",
 };

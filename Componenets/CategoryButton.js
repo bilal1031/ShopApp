@@ -3,6 +3,7 @@ import { View, StyleSheet, Pressable, Text } from "react-native";
 import color from "../Config/color";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Notifcation from "./Notification";
+
 const CategoryButton = ({
   icon,
   iconcolor,
@@ -12,28 +13,51 @@ const CategoryButton = ({
   float,
   style,
   onPress,
+  isactive,
+  applycolorscheme,
 }) => {
-  const [tricolor, setcolor] = useState(bgcolor);
-  const [notifcation, shownotification] = useState(true);
   const [rightmargin, setrmargin] = useState(35);
+  let colorscheme = applycolorscheme
+    ? isactive
+      ? {
+          bgcolor: color.blue,
+          diamondcolor: color.lightblue,
+          float: true,
+          iconcolor: color.white,
+        }
+      : {
+          bgcolor: color.lightgrey,
+          diamondcolor: color.grey,
+          float: false,
+          iconcolor: color.icongrey,
+        }
+    : {
+        bgcolor: bgcolor,
+        diamondcolor: diamondcolor,
+        float: false,
+        iconcolor: iconcolor,
+      };
   return (
-    <Pressable
-      onPress={onPress}
-      onPressIn={() => setcolor(color.white)}
-      onPressOut={() => setcolor(bgcolor)}
-      style={style}
-    >
+    <Pressable onPress={onPress} style={style}>
       <View
         style={[
           styles.r_box,
-          { elevation: float ? 25 : 0, backgroundColor: tricolor },
+          { elevation: float ? 25 : 0, backgroundColor: colorscheme.bgcolor },
         ]}
       >
-        <View style={[styles.innerbox, { backgroundColor: diamondcolor }]}>
+        <View
+          style={[
+            styles.innerbox,
+            { backgroundColor: colorscheme.diamondcolor },
+          ]}
+        >
           <View
-            style={[styles.triangle, { borderBottomColor: tricolor }]}
+            style={[
+              styles.triangle,
+              { borderBottomColor: colorscheme.bgcolor },
+            ]}
           ></View>
-          {notifcation}
+
           <MaterialCommunityIcons
             style={{
               right: rightmargin,
@@ -42,7 +66,7 @@ const CategoryButton = ({
             }}
             name={icon}
             size={size}
-            color={iconcolor}
+            color={colorscheme.iconcolor}
           />
         </View>
       </View>

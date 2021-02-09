@@ -80,7 +80,7 @@ export default function MainScreen() {
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
           data={cat_list}
-          keyExtractor={(catid) => catid.id}
+          keyExtractor={(catid) => catid.id.toString()}
           renderItem={({ item }) => (
             <CategoryButton
               icon={item.icon}

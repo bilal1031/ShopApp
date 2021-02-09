@@ -42,7 +42,10 @@ const CategoryButton = ({
       <View
         style={[
           styles.r_box,
-          { elevation: float ? 25 : 0, backgroundColor: colorscheme.bgcolor },
+          {
+            elevation: colorscheme.float ? 25 : 0,
+            backgroundColor: colorscheme.bgcolor,
+          },
         ]}
       >
         <View
@@ -62,7 +65,7 @@ const CategoryButton = ({
             style={{
               right: rightmargin,
               bottom: 5,
-              elevation: float ? 25 : 0,
+              elevation: colorscheme.float ? 25 : 0,
             }}
             name={icon}
             size={size}

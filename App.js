@@ -1,46 +1,50 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  Platform,
-} from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { StyleSheet } from "react-native";
 import MainScreen from "./Componenets/MainScreen";
+import color from "./Config/color";
+import ProfileScreen from "./Componenets/ProfileScreen";
+import FavScreen from "./Componenets/FavScreen";
+import SearchScreen from "./Componenets/SearchScreen";
+
+const Stack = createStackNavigator();
 
 export default function App() {
-  //const [bgcolor, setbgcolor] = useState(color.grey);
-  //const [diamondcolor, setdiamondcolor] = useState(color.white_lightblue);
-  //const [iconcolor, seticoncolor] = useState(color.blue);
-  const itemcard = [
-    {
-      id: 1,
-      name: "Landscape",
-      type: "Matter Model",
-      price: "345",
-      currency: "USD",
-      image: {
-        uri:
-          "https://www.miliashop.com/164449-thickbox_default/random-light-ii-suspension-lamp-moooi.jpg",
-      },
-    },
-    {
-      id: 2,
-      name: "Discuss Pendent",
-      type: "Matter Model",
-      price: "274",
-      currency: "USD",
-      image: {
-        uri:
-          "https://cdn.moooi.com/tmp/image-thumbnails/Collection/Random/image-thumb__13216__header_fullscreen_2x_jpg/Random_Light_II_Black.jpg",
-      },
-    },
-  ];
   return (
-    <View>
-      <MainScreen />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="home" component={MainScreen} />
+        <Stack.Screen name="user" component={ProfileScreen} />
+        <Stack.Screen name="star" component={FavScreen} />
+        <Stack.Screen name="search1" component={SearchScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  navbar: {
+    height: 60,
+    width: "100%",
+    position: "absolute",
+    bottom: 0,
+    backgroundColor: color.blue,
+    flexDirection: "row",
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    overflow: "hidden",
+    paddingLeft: 10,
+  },
+  icondiv: {
+    width: 60,
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: 20,
+  },
+});

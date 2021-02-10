@@ -12,8 +12,9 @@ import CategoryButton from "./CategoryButton";
 import ItemCard from "./ItemCard";
 import PopularItemCard from "./PopularItemCard";
 import color from "../Config/color";
+import Navbar from "./NavBar";
 
-export default function MainScreen() {
+const MainScreen = ({ navigation }) => {
   const itemcard = [
     {
       id: 1,
@@ -145,11 +146,12 @@ export default function MainScreen() {
         <View style={{ left: 20 }}>
           <PopularItemCard />
         </View>
-        <View style={{ height: 35 }}></View>
+        <View style={{ height: 100 }}></View>
       </ScrollView>
+      <Navbar navigation={navigation} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   maincontainer: {
@@ -180,3 +182,4 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
+export default MainScreen;

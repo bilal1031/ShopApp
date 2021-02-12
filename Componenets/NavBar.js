@@ -6,7 +6,7 @@ import { useRoute } from "@react-navigation/native";
 const Navbar = ({ navigation }) => {
   const route = useRoute();
   const navitems = [
-    { id: 1, icon: "star" },
+    { id: 1, icon: "staro" },
     { id: 2, icon: "home" },
     { id: 3, icon: "search1" },
     { id: 4, icon: "user" },

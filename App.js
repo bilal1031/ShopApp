@@ -40,10 +40,10 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="star"
+          name="staro"
           component={FavScreen}
           options={{
-            title: "star",
+            title: "staro",
             ...TransitionPresets.FadeFromBottomAndroid,
           }}
         />

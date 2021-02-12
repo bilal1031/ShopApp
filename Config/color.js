@@ -9,4 +9,6 @@ export default {
   superlightgrey: "#f0f2f7",
   mildgrey: "#bfcbd9",
   icongrey: "#969baa",
+  cardblue: "#3a77fe",
+  buttongrey: "#e7e7e7",
 };

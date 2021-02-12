@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FlatList, StyleSheet, View, Pressable } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 import color from "../Config/color";

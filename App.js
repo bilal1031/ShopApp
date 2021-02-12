@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import {
+  createStackNavigator,
+  TransitionPresets,
+} from "@react-navigation/stack";
 import { StyleSheet } from "react-native";
 import MainScreen from "./Componenets/MainScreen";
 import color from "./Config/color";
@@ -18,11 +21,40 @@ export default function App() {
         screenOptions={{
           headerShown: false,
         }}
+        transitionConfig={() => fromLeft()}
       >
-        <Stack.Screen name="home" component={MainScreen} />
-        <Stack.Screen name="user" component={ProfileScreen} />
-        <Stack.Screen name="star" component={FavScreen} />
-        <Stack.Screen name="search1" component={SearchScreen} />
+        <Stack.Screen
+          name="home"
+          component={MainScreen}
+          options={{
+            title: "home",
+            ...TransitionPresets.FadeFromBottomAndroid,
+          }}
+        />
+        <Stack.Screen
+          name="user"
+          component={ProfileScreen}
+          options={{
+            title: "user",
+            ...TransitionPresets.FadeFromBottomAndroid,
+          }}
+        />
+        <Stack.Screen
+          name="star"
+          component={FavScreen}
+          options={{
+            title: "star",
+            ...TransitionPresets.FadeFromBottomAndroid,
+          }}
+        />
+        <Stack.Screen
+          name="search1"
+          component={SearchScreen}
+          options={{
+            title: "search1",
+            ...TransitionPresets.FadeFromBottomAndroid,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

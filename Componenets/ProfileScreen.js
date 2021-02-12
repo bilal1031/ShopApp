@@ -10,7 +10,7 @@ const ProfileScreen = ({ navigation }) => {
       <View>
         <ScrollView style={styles.maindiv}>
           <Text style={styles.profiletext}>Profile</Text>
-          <ProfileCard style={{ top: 45 }} />
+          <ProfileCard style={{ top: 50 }} />
           <View
             style={{
               flexDirection: "row",
@@ -36,7 +36,7 @@ const ProfileScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   maindiv: {
-    top: 5,
+    top: 10,
     height: "100%",
     // backgroundColor: color.grey,
   },

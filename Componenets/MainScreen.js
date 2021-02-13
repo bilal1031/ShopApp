@@ -61,7 +61,11 @@ const MainScreen = ({ navigation }) => {
   return (
     <View>
       <View style={styles.maincontainer}>
-        <ScrollView style={{ height: "100%", backgroundColor: color.white }}>
+        <ScrollView
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+          style={{ height: "100%", backgroundColor: color.white }}
+        >
           <StatusBar backgroundColor={color.blue} style="light" />
           <View style={styles.top_div}>
             <Text style={styles.title}>Furniture</Text>

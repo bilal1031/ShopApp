@@ -9,7 +9,11 @@ const ProfileScreen = ({ navigation }) => {
   return (
     <View>
       <View>
-        <ScrollView style={styles.maindiv}>
+        <ScrollView
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+          style={styles.maindiv}
+        >
           <Text style={styles.profiletext}>Profile</Text>
           <ProfileCard style={{ top: 50 }} />
           <View

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import {
   createStackNavigator,
@@ -10,19 +10,27 @@ import color from "./Config/color";
 import ProfileScreen from "./Componenets/ProfileScreen";
 import FavScreen from "./Componenets/FavScreen";
 import SearchScreen from "./Componenets/SearchScreen";
-
+import LoginScreen from "./Componenets/LoginScreen";
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="login"
         screenOptions={{
           headerShown: false,
         }}
         transitionConfig={() => fromLeft()}
       >
+        <Stack.Screen
+          name="login"
+          component={LoginScreen}
+          options={{
+            title: "login",
+            ...TransitionPresets.FadeFromBottomAndroid,
+          }}
+        />
         <Stack.Screen
           name="home"
           component={MainScreen}

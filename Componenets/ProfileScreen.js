@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import Navbar from "./NavBar";
-import ProfileCard from "./ProfileCard";
-import color from "../Config/color";
-import ProfileUlbutton from "./ProfileUlButton";
-import ProfileOption from "./ProfileOption";
+import ProfileCard from "../Componenets/ProfileCard";
+import ProfileUlbutton from "../Componenets/ProfileUlButton";
+import ProfileOption from "../Componenets/ProfileOption";
+
 const ProfileScreen = ({ navigation }) => {
   return (
     <View>
@@ -28,7 +28,7 @@ const ProfileScreen = ({ navigation }) => {
             }}
           >
             <ProfileUlbutton icon="wallet" name="Wallet" />
-            <ProfileUlbutton icon="car" name="Delievry" />
+            <ProfileUlbutton icon="car" name="Delivery" />
             <ProfileUlbutton icon="message1" name="Messages" />
             <ProfileUlbutton icon="customerservice" name="Service" />
           </View>

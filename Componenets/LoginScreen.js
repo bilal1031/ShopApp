@@ -1,12 +1,43 @@
 import React from "react";
-import { Image, StyleSheet, View, Text, Pressable } from "react-native";
-import { TouchableNativeFeedback } from "react-native-gesture-handler";
+import {
+  Image,
+  StyleSheet,
+  View,
+  Text,
+  Pressable,
+  Alert,
+  StatusBar,
+} from "react-native";
 import color from "../Config/color";
 import AppButton from "./AppButton";
-import LoginTextInput from "./LoginTextInput";
+import { Formik } from "formik";
+import * as Yup from "yup";
+import FormTextField from "./FormTextField";
+import { useFormikContext } from "formik";
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string().required().email().label("Email"),
+  password: Yup.string().required().label("Password").min(8),
+});
 function LoginScreen({ navigation }) {
+  const validation = (values, navigation) => {
+    console.log(values);
+    if (
+      values.email == "bilalnaeem166@gmail.com" &&
+      values.password == "naeem123"
+    ) {
+      values.email = "";
+      values.password = "";
+      navigation.navigate("home");
+    } else {
+      values.email = "";
+      values.password = "";
+      Alert.alert("Error", "Enter valid email and password");
+    }
+  };
   return (
     <View style={styles.maindiv}>
+      <StatusBar backgroundColor={color.blue} style="light" />
       <View style={styles.imagediv}>
         <Image
           style={styles.image}
@@ -14,31 +45,39 @@ function LoginScreen({ navigation }) {
         />
         <Text style={styles.title}>ShopApp</Text>
       </View>
-      <View style={styles.formdiv}>
-        <LoginTextInput
-          text="Email:"
-          textstyle={{ fontSize: 20, fontWeight: "900" }}
-        />
-        <LoginTextInput
-          text="Password:"
-          textstyle={{ fontSize: 20, fontWeight: "900", marginTop: "5%" }}
-        />
-      </View>
-      <View style={styles.buttondiv}>
-        <AppButton text="Login" onPress={() => navigation.navigate("home")} />
-        <Pressable onPress={() => console.log("Signup")}>
-          <Text
-            style={{
-              color: color.blue,
-              fontWeight: "800",
-              marginTop: 15,
-              fontSize: 16,
-            }}
-          >
-            Or SignUp
-          </Text>
-        </Pressable>
-      </View>
+      <Formik
+        initialValues={{ email: "", password: "" }}
+        onSubmit={(values) => validation(values, navigation)}
+        validationSchema={validationSchema}
+      >
+        {({ handleSubmit }) => (
+          <View style={{ top: "15%" }}>
+            <View style={styles.formdiv}>
+              <FormTextField name="email" context="emailAddress" />
+              <FormTextField
+                name="password"
+                textContentType="password"
+                secureTextEntry
+              />
+            </View>
+            <View style={styles.buttondiv}>
+              <AppButton text="Login" onPress={handleSubmit} />
+              <Pressable onPress={() => navigation.navigate("signup")}>
+                <Text
+                  style={{
+                    color: color.blue,
+                    fontWeight: "800",
+                    marginTop: 15,
+                    fontSize: 16,
+                  }}
+                >
+                  Or SignUp
+                </Text>
+              </Pressable>
+            </View>
+          </View>
+        )}
+      </Formik>
     </View>
   );
 }
@@ -64,7 +103,8 @@ const styles = StyleSheet.create({
   formdiv: {
     width: "100%",
     alignItems: "center",
-    top: "15%",
+    justifyContent: "space-evenly",
+    height: 250,
   },
   buttondiv: {
     alignSelf: "center",

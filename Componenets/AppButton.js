@@ -5,7 +5,7 @@ import { useState } from "react/cjs/react.development";
 import color from "../Config/color";
 function AppButton(props) {
   return (
-    <View style={styles.buttondiv}>
+    <View style={[styles.buttondiv, props.style]}>
       <TouchableNativeFeedback onPress={props.onPress}>
         <View style={styles.buttondiv}>
           <Text style={styles.text}>{props.text}</Text>

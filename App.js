@@ -11,6 +11,7 @@ import ProfileScreen from "./Componenets/ProfileScreen";
 import FavScreen from "./Componenets/FavScreen";
 import SearchScreen from "./Componenets/SearchScreen";
 import LoginScreen from "./Componenets/LoginScreen";
+import SignUpScreen from "./Componenets/SignUpScreen";
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -28,6 +29,14 @@ export default function App() {
           component={LoginScreen}
           options={{
             title: "login",
+            ...TransitionPresets.FadeFromBottomAndroid,
+          }}
+        />
+        <Stack.Screen
+          name="signup"
+          component={SignUpScreen}
+          options={{
+            title: "signup",
             ...TransitionPresets.FadeFromBottomAndroid,
           }}
         />

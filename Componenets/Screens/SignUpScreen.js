@@ -24,7 +24,10 @@ function SignUpScreen(props) {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={color.blue} style="light" />
-      <ScrollView>
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.title_div}>
           <TouchableNativeFeedback
             onPress={() => props.navigation.navigate("login")}

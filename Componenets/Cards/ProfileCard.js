@@ -2,7 +2,7 @@ import React from "react";
 import { createPortal } from "react-dom";
 import { View, StyleSheet, Image, Text } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-import color from "../Config/color";
+import color from "../../Config/color";
 
 const ProfileCard = ({ style }) => {
   const stat_items = [
@@ -19,7 +19,7 @@ const ProfileCard = ({ style }) => {
           <View style={styles.image_div}>
             <Image
               style={styles.image}
-              source={require("../assets/shopapp-icon.png")}
+              source={require("../../assets/shopapp-icon.png")}
             />
           </View>
           <View style={styles.name_div}>

@@ -8,11 +8,11 @@ import {
   ScrollView,
   Platform,
 } from "react-native";
-import CategoryButton from "./CategoryButton";
-import ItemCard from "./ItemCard";
-import PopularItemCard from "./PopularItemCard";
-import color from "../Config/color";
-import Navbar from "./NavBar";
+import CategoryButton from "../Buttons/CategoryButton";
+import ItemCard from "../Cards/ItemCard";
+import PopularItemCard from "../Cards/PopularItemCard";
+import color from "../../Config/color";
+import Navbar from "../NavBar";
 
 const MainScreen = ({ navigation }) => {
   const itemcard = [

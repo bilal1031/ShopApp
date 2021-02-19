@@ -5,13 +5,13 @@ import {
   TransitionPresets,
 } from "@react-navigation/stack";
 import { StyleSheet } from "react-native";
-import MainScreen from "./Componenets/MainScreen";
+import MainScreen from "./Componenets/Screens/MainScreen";
 import color from "./Config/color";
-import ProfileScreen from "./Componenets/ProfileScreen";
-import FavScreen from "./Componenets/FavScreen";
-import SearchScreen from "./Componenets/SearchScreen";
-import LoginScreen from "./Componenets/LoginScreen";
-import SignUpScreen from "./Componenets/SignUpScreen";
+import ProfileScreen from "./Componenets/Screens/ProfileScreen";
+import FavScreen from "./Componenets/Screens/FavScreen";
+import SearchScreen from "./Componenets/Screens/SearchScreen";
+import LoginScreen from "./Componenets/Screens/LoginScreen";
+import SignUpScreen from "./Componenets/Screens/SignUpScreen";
 const Stack = createStackNavigator();
 
 export default function App() {

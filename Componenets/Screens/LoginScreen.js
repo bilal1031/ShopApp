@@ -8,12 +8,11 @@ import {
   Alert,
   StatusBar,
 } from "react-native";
-import color from "../Config/color";
-import AppButton from "./AppButton";
+import color from "../../Config/color";
+import AppButton from "../Buttons/AppButton";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import FormTextField from "./FormTextField";
-import { useFormikContext } from "formik";
+import FormTextField from "../FormItems/FormTextField";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -41,7 +40,7 @@ function LoginScreen({ navigation }) {
       <View style={styles.imagediv}>
         <Image
           style={styles.image}
-          source={require("../assets/shopapp-icon.png")}
+          source={require("../../assets/shopapp-icon.png")}
         />
         <Text style={styles.title}>ShopApp</Text>
       </View>

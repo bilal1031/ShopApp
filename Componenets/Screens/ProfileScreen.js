@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
-import Navbar from "./NavBar";
-import ProfileCard from "../Componenets/ProfileCard";
-import ProfileUlbutton from "../Componenets/ProfileUlButton";
-import ProfileOption from "../Componenets/ProfileOption";
+import Navbar from "../NavBar";
+import ProfileCard from "../Cards/ProfileCard";
+import ProfileUlbutton from "../Buttons/ProfileUlButton";
+import ProfileOption from "../ProfileOption";
 
 const ProfileScreen = ({ navigation }) => {
   return (

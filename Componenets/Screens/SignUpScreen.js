@@ -9,10 +9,10 @@ import {
 } from "react-native";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import AppButton from "./AppButton";
-import color from "../Config/color";
+import AppButton from "../Buttons/AppButton";
+import color from "../../Config/color";
 import Icon from "react-native-vector-icons/AntDesign";
-import FormTextField from "./FormTextField";
+import FormTextField from "../FormItems/FormTextField";
 
 const validationSchema = Yup.object().shape({
   username: Yup.string().required().label("Username"),

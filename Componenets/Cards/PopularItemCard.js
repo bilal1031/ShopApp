@@ -6,8 +6,8 @@ import {
   Text,
   TouchableNativeFeedback,
 } from "react-native";
-import color from "../Config/color";
-import ArrowButton from "./ArrowButton";
+import color from "../../Config/color";
+import ArrowButton from "../Buttons/ArrowButton";
 
 const PopularItemCard = ({ onPress }) => {
   return (

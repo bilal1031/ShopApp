@@ -1,8 +1,8 @@
 import React, { Children, useState } from "react";
 import { View, StyleSheet, Pressable, Text } from "react-native";
-import color from "../Config/color";
+import color from "../../Config/color";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import Notifcation from "./Notification";
+import Notifcation from "../Notification";
 
 const CategoryButton = ({
   icon,

@@ -7,7 +7,7 @@ import {
   TouchableNativeFeedback,
 } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
-import color from "../Config/color";
+import color from "../../Config/color";
 const ProfileUlbutton = ({ icon, size, name }) => {
   return (
     <View

@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Navbar from "./NavBar";
+import Navbar from "../NavBar";
 const SearchScreen = ({ navigation }) => {
   return (
     <View style={styles.maindiv}>

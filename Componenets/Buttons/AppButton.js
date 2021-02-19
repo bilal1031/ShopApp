@@ -1,8 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Text, Pressable } from "react-native";
 import { TouchableNativeFeedback } from "react-native-gesture-handler";
-import { useState } from "react/cjs/react.development";
-import color from "../Config/color";
+import color from "../../Config/color";
 function AppButton(props) {
   return (
     <View style={[styles.buttondiv, props.style]}>
